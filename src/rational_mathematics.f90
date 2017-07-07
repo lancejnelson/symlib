@@ -17,8 +17,8 @@ CONTAINS
   !!<summary>This routine takes an integer 3x3 matrix and computes its
   !!Smith Normal Form.</summary>
   !!<parameter name="H" regular="True">Input matrix.</parameter>
-  !!<parameter name="A" regular="True">Smith Normal Form.</parameter>
-  !!<parameter name="M" regular="true">Left Transform.</parameter>
+  !!<parameter name="A" regular="True">Left Transform.</parameter>
+  !!<parameter name="M" regular="true">Smith Normal Form matrix.</parameter>
   !!<parameter name="B" regular="True">Right Transform.</parameter>
   subroutine SmithNormalForm(H,A,M,B)
     integer, intent(in) :: H(3,3) 
@@ -280,7 +280,6 @@ CONTAINS
   !!separate arguments</summary>
   !!<parameter name="x1" ></parameter>
   !!<parameter name="x2" ></parameter>
-  !!<parameter name="divisor"></parameter>
   function gcd_2ints(x1, x2) result(divisor)
     integer, intent(in) :: x1, x2
     integer :: divisor
@@ -309,7 +308,7 @@ CONTAINS
   !!<summary>This function finds the greatest common denominator of
   !!several integers.This case works on a list of integers (a rank-1
   !!array). </summary>
-  !!<parameter name="x" ></parameter>
+  !!<parameter name="x" regular="true"></parameter>
   function gcd_rank1(x) result(divisor)
     integer, intent(in) :: x(:)
     integer :: divisor
